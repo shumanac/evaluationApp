@@ -1,0 +1,59 @@
+<template name="post">
+{{>nav}}
+	<input type="hidden" name="updated" value="{{updated}}" id="updated">
+	{{#if adding_interest}}
+	{{> share}}
+	{{/if}}
+
+<div style="width:900px;margin-left:auto;margin-right:auto;" class="ui segment">
+  <img class="ui centered image" src="/pics/{{imgname}}">
+  <h1 class="ui orange header">
+  {{name}}
+</h1>
+<i class="clock icon"></i>{{time}}&nbsp;&nbsp;
+<a class="ui image label">
+    <img src="/pics/{{imgname}}"/>
+  Posted by {{userEmail}}
+</a>
+<br><br>
+<a class="ui red ribbon label">{{category}}</a>
+<br><br>
+<p>{{description}}</p>
+<br><div class="ui secondary pointing menu">
+  <a class="active item">
+    <i class="comments icon"></i> COMMENTS
+  </a>
+  </div>
+ <div class="ui comments">
+ {{#each comments}}
+
+  <div class="comment">
+    <a class="avatar">
+      <img src="/avatar.png">
+    </a>
+    <div class="content">
+      <a class="author">{{poster}}</a>
+      <div class="metadata">
+        <div class="date">{{timestamp}}</div>
+      </div>
+      <div class="text">
+        <p>{{comm}}</p>
+      </div>
+    </div>
+  </div>
+ {{/each}}
+
+ {{#if currentUser}}
+ <br> <form class="ui reply form">
+    <div class="field">
+      <textarea class="please"></textarea>
+    </div>
+    <div id="cmnt" class="ui primary submit labeled icon button">
+      <i class="icon edit"></i> Add Comment
+    </div>
+  </form>
+  {{/if}}
+</div>
+</div>
+
+</template>

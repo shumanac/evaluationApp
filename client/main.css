@@ -1,0 +1,13 @@
+#login-buttons{
+    display: block;
+}
+
+#login-dropdown-list{
+    left: -298%;
+}
+.fbPic {
+  border-right: 1.5px solid;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+}

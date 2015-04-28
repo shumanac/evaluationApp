@@ -1,0 +1,16 @@
+<template name="categories">
+	 <div class="ui pointing dropdown link item">
+      <i class="dropdown icon"></i>
+      <span class="text">Categories</span>
+      <div class="menu">
+  
+      {{#each Cat}}
+        <div class="item">{{catgry}}</div>
+     {{/each}}
+      </div>
+    </div>
+     <script type="text/javascript">$('.ui.dropdown')
+  .dropdown()
+;</script>
+   
+</template>

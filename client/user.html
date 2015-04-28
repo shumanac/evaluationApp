@@ -1,0 +1,25 @@
+<template name="user">
+	  {{>nav}}
+	  	<input type="hidden" name="updated" value="{{updated}}" id="updated">
+	{{#if adding_interest}}
+	{{> share}}
+	{{/if}}
+
+<div class="ui piled segment">
+<center> <img class="ui small circular image" src="/avatar.png">
+<h3> Shared by <a class="ui orange label"> {{userEmail}}</a></h3></center>
+	<div class="animated bounceInUp">
+		<ul class="clearfix" >
+		{{#each theirposts}}
+	<li style="margin-right: 1%;">
+	{{>article}}
+	</li>
+			 
+		{{/each}}
+		</ul>
+</div>
+</div>
+
+
+ 
+</template>

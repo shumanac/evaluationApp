@@ -1,0 +1,58 @@
+<template name="nav">
+ <script type="text/javascript">$('.ui.dropdown')
+  .dropdown()
+;</script>
+<div class="ui purple inverted menu">
+  <a href="/" class="active item">
+   evaluationApp
+  </a>
+  <a href="/home" class="item">
+     <i class="home icon"></i>
+  </a>
+ 	{{#if currentUser}}
+  <a class="item addInterest ">
+<i class="add circle icon"></i>Add to share
+  </a>
+<!--   <a class="item" href="/login" id="logout">
+    <i class="sign out icon"></i> Logout
+  </a>-->
+     <a class="item">
+    <i class="sign in icon"></i>{{> loginButtons}}
+  </a>
+ <div class="right menu">
+  <a href="/profile" class="item" id="profile">
+    <i class="user icon"></i> <u> {{> fb_pic}} {{username}}</u>
+  </a>
+    </div>
+  {{else}}
+   <a class="item">
+    <i class="sign in icon"></i>{{> loginButtons}}
+  </a>
+  {{/if}}
+
+ <!--  <div class="ui pointing dropdown link item">
+      <i class="dropdown icon"></i>
+      <span class="text"><i class="list icon"></i> Categories</span>
+      <div class="menu">
+      {{#each Cat}}
+     <a href="/{{catgry}}">   <div class="item catmeow">{{catgry}}</div></a><br>
+     {{/each}}
+      </div>
+    </div>
+
+<a class="item" href="/search">
+   <i class="search icon"></i>
+    </a>
+   
+     <script type="text/javascript">$('.ui.dropdown')
+  .dropdown()
+;</script>-->
+
+
+  </div>
+</template>
+<template name='fb_pic'>
+  {{#if currentUser}}
+    <img src="{{pic}}" class='fbPic'>
+  {{/if}}
+</template>

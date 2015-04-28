@@ -1,0 +1,90 @@
+<template name="article">
+
+     <div class="item">
+    <div class="ui special cards">
+  <div class="card">
+    <div class="dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+          {{#if currentUser}}
+          <a href="#" class="like">
+            <div class="ui inverted button">
+        <i class="heart icon"></i> Like
+            </div></a> 
+             {{/if}}  
+          </div>
+        </div>
+      </div>
+
+  
+  <img src="/pics/{{imgname}}"/>
+
+<!--   {{#each img}}
+       <img src="{{this.url}}" alt="thumbnail" class="thumbnail"/>
+    {{/each}} -->
+
+  <script>$('.special.cards .image').dimmer({
+  on: 'hover'
+});</script>
+
+    </div>
+    <div class="content">
+      <a class="header" href="/article/{{_id}}" target="_blank">{{name}}</a>
+      <div class="meta">
+        <span class="date">{{time}}</span><br>
+        
+        <br><a href="/{{category}}"><div class="ui yellow horizontal label">{{category}}</div></a>&nbsp;
+       <a href="/article/{{_id}}/">
+        <div class="ui blue label">
+        <i class="comments outline icon icon"></i> {{numComms}}
+        </div>
+      </a>&nbsp;
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+      
+      {{#if currentUser}}   
+    <p>
+    <a href="#" class="like">
+     <div class="ui purple label">
+        <i class="thumbs up icon"></i>{{numlikes}} 
+        </div></a>&nbsp;&nbsp;
+        <div class="ui red horizontal label">{{likethis}}</div><br>
+      {{#if isAuthor}}
+      <a class="remove"><i style="color:#d95c5c;" class="remove icon">{{removeArticle}}</i></a>
+          {{/if}}<br>
+<div class="description">
+{{hashtag}}
+   </div>       
+    </p>
+    {{/if}} 
+      </a>
+     {{#if currentUser}}
+      <div class="ui horizontal divider"><i class="empty star icon"></i>
+  </div> 
+  <div class="extra content">
+   <!--<a id="unpin" style="color:#D73E66;">Unpin</a>-->
+    <div class="right floated author">
+
+   Posted by  {{userEmail}} &nbsp;<div class="mini blue ui buttons" id="follow">
+  <div class="ui button">{{followed}}</div>
+</div>
+
+    </div>
+  </div>
+  {{/if}} 
+    </div>
+   <!--  {{#if currentUser}}
+       <div class="ui bottom attached button" id="pinit">
+      <i class="pin icon" style="color:#D73E66;"></i>
+     <a class="ui circular label big" style="color:#D73E66;background:transparent;">{{pinned}}</a>
+    </div>  {{/if}}-->
+  </div>
+</div>
+
+</div>
+
+</template>
+
