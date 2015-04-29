@@ -2,11 +2,11 @@
 {{>nav}}
 	<input type="hidden" name="updated" value="{{updated}}" id="updated">
 	{{#if adding_interest}}
-	{{> share}}
+	{{data}}
 	{{/if}}
 
 <div style="width:900px;margin-left:auto;margin-right:auto;" class="ui segment">
-  <img class="ui centered image" src="/pics/{{imgname}}">
+<!--  <img class="ui centered image" src="/pics/{{imgname}}">-->
   <h1 class="ui orange header">
   {{name}}
 </h1>
@@ -19,8 +19,15 @@
 <a class="ui red ribbon label">{{category}}</a>
 <br><br>
 <p>{{description}}</p>
-<br><div class="ui secondary pointing menu">
-  <a class="active item">
+<br>
+      <div class="meta">
+        <a class="like">
+          <i class="thumbs up icon"></i> {{userLikes}}
+        </a>
+      </div>
+    
+<div class="ui secondary pointing menu">
+ <a class="active item">
     <i class="comments icon"></i> COMMENTS
   </a>
   </div>

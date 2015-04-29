@@ -13,3 +13,6 @@ nooitaf:semantic-ui
 iron:router
 jquery
 accounts-base
+msavin:mongol
+autopublish
+insecure

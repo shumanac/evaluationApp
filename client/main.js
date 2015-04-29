@@ -1,4 +1,4 @@
-
+/*
 
 if (Meteor.isClient) {
 
@@ -35,5 +35,5 @@ Template.post.events({
 
 Template.listPosts.posts = function(){
     return Posts.find();
-}
+}*/
 

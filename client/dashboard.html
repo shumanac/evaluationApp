@@ -1,8 +1,12 @@
 <template name="article">
-
-     <div class="item">
+    {{>nav}}
+<div class="dashboard">
+    <ul>
+    {{#each articleList}}
+    <li>
+ <div class="item">
     <div class="ui special cards">
-  <div class="card">
+  <div id="card" class="card">
     <div class="dimmable image">
       <div class="ui dimmer">
         <div class="content">
@@ -17,16 +21,13 @@
         </div>
       </div>
 
-  
-  <img src="/pics/{{imgname}}"/>
+<!--  
+  <img src="/pics/{{imgname}}"/>-->
 
 <!--   {{#each img}}
        <img src="{{this.url}}" alt="thumbnail" class="thumbnail"/>
     {{/each}} -->
 
-  <script>$('.special.cards .image').dimmer({
-  on: 'hover'
-});</script>
 
     </div>
     <div class="content">
@@ -85,6 +86,9 @@
 </div>
 
 </div>
-
+</li>
+{{/each}}
+    </ul>
+</div>
 </template>
 

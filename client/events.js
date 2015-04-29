@@ -10,6 +10,7 @@ Template.share.events({
 //  },
 
 	'click .save':function(evt,tmpl) {
+        evt.preventDefault();
 		var description = tmpl.find('.description').value;
 		var name = tmpl.find('.name').value;
 		//var url = tmpl.find('.url').value;
@@ -29,7 +30,7 @@ Template.share.events({
 			author:Meteor.userId(),
 			userEmail:Meteor.user().profile.name,
 			category:cat,	
-		},function(){console.log('Article inserted')});
+            });/*function(){console.log('Article inserted')});*/
 		//  fsFile = new FS.File(file);
 		// Images.insert(file, function (err, fileObj) {
 
@@ -106,6 +107,9 @@ Template.article.events({
 	//	} 
 	//	Session.set('updated',new Date());
 	//}
+    
+
+    
 });
 Template.nav.events({
 	'click .addInterest':function(evt,tmpl){
@@ -146,7 +150,9 @@ Template.post.events({
 			article:tmpl.data._id
 		});
 		Session.set('updated',new Date());
-	}
+	},
+
+    
 });
 Template.profile.events({
 	'click #pin':function(evt){

@@ -3,7 +3,7 @@ Template.article.helpers({
   numlikes: function(){
   return Likes.find({article:this._id}).count();
 },
-images:function(){
+/*images:function(){
   return Images.find({});
 },
 img: function () {
@@ -12,7 +12,7 @@ img: function () {
   return Images.find(Articles.find({}).fetch()[c].imgid); // Where Images is an FS.Collection instance
   //return Images.find();
   
-  },
+  },*/
  numComms:function(){
     return Comments.find({article:this._id}).count();
   },
@@ -25,7 +25,10 @@ likethis :function(){
       return "Give a thumbs up!";
     }
 },
- followed :function(){
+        articleList: function(){
+  return Articles.find({});
+},
+ /*followed :function(){
     var followed=Articles.findOne(this._id).userEmail;
     var own=Meteor.user().username;
   var curFollow = Friends.findOne({muser:Meteor.userId(),friend:followed});
@@ -34,11 +37,9 @@ likethis :function(){
     }
     else {
       return "Follow";
-    }},
+    }},*/
 
-articleList: function(){
-  Articles.find({catName:Session.get('category')});
-},
+
 userLikes :function(){
   var curUserlike = Likes.findOne({muser:Meteor.userId(),article:this._id});
    var userId = Meteor.userId();
@@ -48,8 +49,6 @@ userLikes :function(){
     } 
 }
 });
-
-
 
 
 Template.post.helpers({
@@ -63,6 +62,7 @@ adding_interest: function(){
 comments:function(){
   return Comments.find({article:this._id});
 },
+
 isPoster:function(){
   if(Meteor.userId()=== Comments.findOne({poster:this.user().username})){
     return true;
@@ -81,9 +81,9 @@ likethis :function(){
       return "Give a thumbs up!";
     }
 },
-articleList: function(){
+/*articleList: function(){
   Posts.find({catName:Session.get('category')});
-},
+},*/
 userLikes :function(){
   var curUserlike = Likes.findOne({muser:Meteor.userId(),article:this._id});
    var userId = Meteor.userId();
@@ -146,7 +146,7 @@ Template.share.helpers({
   }
 });
 
-if (Meteor.isServer) {
+/*if (Meteor.isServer) {
   Meteor.publish("article", function () {
     return Articles.find();
   });
@@ -156,6 +156,16 @@ if (Meteor.isServer) {
     return Posts.find();
   });
 }
+if (Meteor.isServer) {
+  Meteor.publish("share", function () {
+    return Shares.find();
+  });
+}
+if (Meteor.isServer) {
+  Meteor.publish("comments", function () {
+    return Comments.find();
+  });
+}*/
 
 Template.nav.helpers({
   Cat:function(){
@@ -165,3 +175,4 @@ Template.nav.helpers({
   return Meteor.users.findOne(Meteor.userId()).username;
 }
 });
+
