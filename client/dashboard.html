@@ -46,21 +46,21 @@
     <div class="extra content">
       <a>
       
-      {{#if currentUser}}   
+    {{#if currentUser}} 
     <p>
     <a href="#" class="like">
      <div class="ui purple label">
         <i class="thumbs up icon"></i>{{numlikes}} 
         </div></a>&nbsp;&nbsp;
-        <div class="ui red horizontal label">{{likethis}}</div><br>
+        <a href="#" class="like">  <div class="ui red horizontal label">{{likethis}}</div></a><br>
       {{#if isAuthor}}
       <a class="remove"><i style="color:#d95c5c;" class="remove icon">{{removeArticle}}</i></a>
           {{/if}}<br>
-<div class="description">
-{{hashtag}}
-   </div>       
+<!--<div class="description">
+{{description}}
+   </div> -->      
     </p>
-    {{/if}} 
+   {{/if}}
       </a>
      {{#if currentUser}}
       <div class="ui horizontal divider"><i class="empty star icon"></i>
@@ -70,7 +70,7 @@
     <div class="right floated author">
 
    Posted by  {{userEmail}} &nbsp;<div class="mini blue ui buttons" id="follow">
-  <div class="ui button">{{followed}}</div>
+<!--  <div class="ui button">{{followed}}</div>-->
 </div>
 
     </div>

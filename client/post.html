@@ -21,9 +21,25 @@
 <p>{{description}}</p>
 <br>
       <div class="meta">
-        <a class="like">
-          <i class="thumbs up icon"></i> {{userLikes}}
-        </a>
+                <a>
+      
+      {{#if currentUser}}   
+    <p>
+    <a href="#" class="like">
+     <div class="ui purple label">
+        <i class="thumbs up icon"></i>{{numlikes}} 
+        </div></a>&nbsp;&nbsp;
+        <div class="ui red horizontal label">{{likethis}}</div><br>
+      {{#if isAuthor}}
+      <a class="remove"><i style="color:#d95c5c;" class="remove icon">{{removeArticle}}</i></a>
+          {{/if}}<br>
+<div class="description">
+{{hashtag}}
+   </div>       
+    </p>
+    {{/if}} 
+      </a>
+        
       </div>
     
 <div class="ui secondary pointing menu">

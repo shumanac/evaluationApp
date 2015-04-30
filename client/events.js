@@ -71,15 +71,15 @@ Template.article.events({
 	 		Likes.remove({_id:lid});
 	 	}
 	 }
-	 	 var c=Pinboard.find().count();
+	/* 	 var c=Pinboard.find().count();
 	 for(var i=0;i<c;i++){
 	 	if(Pinboard.find().fetch()[i].article===id){
 	 		var pid=Pinboard.find().fetch()[0]._id;
 	 		Pinboard.remove({_id:pid});
 	 	}
 	 }
-	},
-	'click #follow':function(evt,tmpl){
+	},*/
+/*	'click #follow':function(evt,tmpl){
 		evt.preventDefault();
 		var id=tmpl.data._id;
 		var followed=Articles.findOne(id).userEmail;
@@ -87,7 +87,7 @@ Template.article.events({
 		if(!curFriend){
 			Friends.insert({muser:Meteor.userId(),friend:followed,article:tmpl.data._id});			
 		} 	
-	},
+	},*/
 	//'click #unpin':function(evt,tmpl){
 	//	evt.preventDefault();
 			//var id=tmpl.data._id;
@@ -108,7 +108,7 @@ Template.article.events({
 	//	Session.set('updated',new Date());
 	//}
     
-
+    }
     
 });
 Template.nav.events({
@@ -139,6 +139,14 @@ Template.post.events({
 			var id=tmpl.data._id;
 	 Comments.remove({_id:id});
 	},
+    'click .like':function(evt,tmpl){
+		var curlike = Likes.findOne({muser:Meteor.userId(),article:tmpl.data._id});
+		if(!curlike){
+			Likes.insert({muser:Meteor.userId(),article:tmpl.data._id});				
+		} 
+		Session.set('updated',new Date());
+	},
+
 	'click #cmnt':function(evt,tmpl){
 		evt.preventDefault();
 		var comment=tmpl.find('.please').value;
@@ -167,10 +175,12 @@ Template.profile.events({
   }
  }
 },
-'click #unfollow':function(evt){
+    
+
+/*'click #unfollow':function(evt){
 		evt.preventDefault();
 		Friends.remove({_id:this._id});
-	}
+	}*/
 //'click #pins':function(evt){
 		//evt.preventDefault();
 		//Meteor.call('removePins');

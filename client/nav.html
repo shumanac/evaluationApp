@@ -21,7 +21,8 @@
   </a>
  <div class="right menu">
   <a href="/profile" class="item" id="profile">
-    <i class="user icon"></i> <u> {{> fb_pic}} {{username}}</u>
+    <u>{{username}}</u>
+      <u>{{user_image}}</u>
   </a>
     </div>
   {{else}}
@@ -50,9 +51,4 @@
 
 
   </div>
-</template>
-<template name='fb_pic'>
-  {{#if currentUser}}
-    <img src="{{pic}}" class='fbPic'>
-  {{/if}}
 </template>
