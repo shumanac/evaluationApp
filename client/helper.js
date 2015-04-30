@@ -28,7 +28,27 @@ likethis :function(){
         articleList: function(){
   return Articles.find({});
 },
-    
+           scheduleList: function(){
+  return Schedules.find({});
+},
+    user_image:function () {
+    try{
+        if(Meteor.user().services.facebook){
+            // this is the line of interest
+            return 'http://graph.facebook.com/'+Meteor.user().services.facebook.id+'/picture?type=square&height=60&width=60';
+
+         
+        }else if(Meteor.user().profile){
+            return $.trim(Meteor.user().profile.avatar);
+        }else{
+            return "/images/placeholder-240x240.gif";
+        }
+    }
+    catch(err){
+        console.log(err);
+    }
+},
+
 
  /*followed :function(){
     var followed=Articles.findOne(this._id).userEmail;
@@ -104,7 +124,25 @@ updated :function(){
   },
 sourceLink: function(){
   return "http://localhost:3000/article/"+this._id;
-}
+},
+     user_image:function () {
+    try{
+        if(Meteor.user().services.facebook){
+            // this is the line of interest
+            return 'http://graph.facebook.com/'+Meteor.user().services.facebook.id+'/picture?type=square&height=30&width=30';
+
+         
+        }else if(Meteor.user().profile){
+            return $.trim(Meteor.user().profile.avatar);
+        }else{
+            return "/images/placeholder-240x240.gif";
+        }
+    }
+    catch(err){
+        console.log(err);
+    }
+},
+
 });
 
 
@@ -136,7 +174,9 @@ pins:function(){
 adding_interest: function(){ 
   return Session.get('adding_interest');
 },
-
+adding_schedule: function(){ 
+  return Session.get('adding_schedule');
+},
 numlikes: function(){
   return Likes.find({post:this._id}).count();
 },
@@ -248,7 +288,7 @@ Template.nav.helpers({
     try{
         if(Meteor.user().services.facebook){
             // this is the line of interest
-            return 'http://graph.facebook.com/'+Meteor.user().services.facebook.id+'/picture?type=square&height=60&width=60';
+            return 'http://graph.facebook.com/'+Meteor.user().services.facebook.id+'/picture?type=square&height=40&width=40';
 
          
         }else if(Meteor.user().profile){
@@ -264,3 +304,6 @@ Template.nav.helpers({
 
 });
 
+Template.schedule.helpers({
+    
+})

@@ -7,6 +7,7 @@ Router.map(function(){
             this.route('article', {path:'/article'}); 
             this.route('share', {path:'share'}); 
             this.route('profile', {path:'profile'});
+             this.route('schedule', {path:'schedule'});
             this.route('post', {path: '/post/_id'});
 	        this.route('user', {path: '/user'});
 	this.route('/article/:_id', function () {

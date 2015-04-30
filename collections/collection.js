@@ -11,4 +11,5 @@ Pinboard=new Meteor.Collection('pinboard');
  // stores: [new FS.Store.FileSystem("images", {path: "/home/shumana/Downloads/evaluationApp/public/pics"})]
 //});
 Friends=new Meteor.Collection('friends');
+Schedules=new Meteor.Collection('schedules');
 

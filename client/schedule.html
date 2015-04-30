@@ -1,15 +1,15 @@
-<template name="share">
+<template name="schedule">
 
 
 
         {{> nav}}
 <div class="ui form segment">
 
-  <h3>ADD A LINK</h3>
+  <h3>ADD A SCHEDULE FOR EVENT</h3>
   <div class="two fields">
     <div class="field">
-      <label>Name</label>
-      <input placeholder="Who is sharing" name="name" class="name" type="text">
+      <label>Event by</label>
+      <input placeholder="Name" name="name" class="name" type="text">
     </div>
 
 
@@ -21,13 +21,14 @@
   		
   
   <div class="field">
-  <label>Category</label>
+  <label>EVENT FOR</label>
   	<select class="selectCat">
     
   <option value="Designer Team">Designer Team</option>
    <option value="Developer Team">Developer Team</option>
      <option value="Account Manager Team">Account Manager Team</option>
          <option value="Copy Writer Team">Copy Writer Team</option>
+         <option value="For all">For all</option>
 
 </select>
   </div>
